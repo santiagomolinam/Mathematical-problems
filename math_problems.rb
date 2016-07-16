@@ -26,3 +26,33 @@ class Math01
     puts time.real
   end
 end
+# Exercise 2
+class MathProblem02
+  def self.fibo_numbers(num)
+    a = 0
+    b = 1
+    acum = 0
+    numbers = [b]
+    (1...num).each do
+      acum = a + b
+      a = b
+      b = acum
+      numbers.push(acum)
+    end
+    numbers
+  end
+
+  def self.fibonacci
+    a = 0
+    b = 1
+    acum = 0
+    acum2 = 0
+    while acum < 4_000_000
+      acum = a + b
+      a = b
+      b = acum
+      acum2 += acum if acum.even?
+    end
+    acum2
+  end
+end
